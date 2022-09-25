@@ -6,4 +6,15 @@
     <p><ion-icon name="call-outline"></ion-icon>{{ card.phone }}</p>
     <p><ion-icon name="mail-outline"></ion-icon>{{ card.email }}</p>
   </div>
+  <div class="card-container__buttons" *ngIf="isDashboard">
+    <button class="card-container__button edit" (click)="handleEdit(card.id)">
+      <ion-icon name="create-outline"></ion-icon>
+    </button>
+    <button
+      class="card-container__button delete"
+      (click)="handleDelete(card.name)"
+    >
+      <ion-icon name="trash-outline"></ion-icon>
+    </button>
+  </div>
 </div>

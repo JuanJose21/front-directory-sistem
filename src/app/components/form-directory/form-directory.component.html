@@ -1,0 +1,39 @@
+<div class="form-directory-container">
+  <form novalidate [formGroup]="directoryForm" *ngIf="directoryForm">
+    <label>
+      <span>URL Imagen</span>
+      <input type="text" formControlName="image" />
+    </label>
+    <label>
+      <span>Nombre</span>
+      <input type="text" formControlName="name" />
+    </label>
+    <label>
+      <span>NIT</span>
+      <input type="text" formControlName="nit" />
+    </label>
+    <label>
+      <span>Dirección</span>
+      <input type="text" formControlName="location" />
+    </label>
+    <label>
+      <span>Teléfono</span>
+      <input type="text" formControlName="phone" />
+    </label>
+    <label>
+      <span>Celular</span>
+      <input type="text" formControlName="cellphone" />
+    </label>
+    <label>
+      <span>Correo electronico</span>
+      <input type="text" formControlName="email" />
+    </label>
+    <button
+      type="submit"
+      (click)="handleForm()"
+      [disabled]="!directoryForm.valid"
+    >
+      {{ idEdit ? "Editar" : "Crear" }}
+    </button>
+  </form>
+</div>

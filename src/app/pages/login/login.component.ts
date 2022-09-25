@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.userForm.get('user')?.value);
-    console.log(this.userForm.get('password')?.value);
+    this.router.navigate(['/dashboard']);
   }
 }

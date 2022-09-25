@@ -116,3 +116,15 @@ input {
     outline: none;
   }
 }
+
+.alertify {
+  .ajs-modal {
+    .ajs-body {
+      .ajs-content {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

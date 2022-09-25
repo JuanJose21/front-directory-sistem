@@ -1,0 +1,17 @@
+<div class="dashboard-container">
+  <div class="dashboard-container__cards">
+    <button class="dashboard-container__back" (click)="logout()">
+      <ion-icon name="log-out-sharp"></ion-icon>
+    </button>
+    <h1>
+      Resultado para la búsqueda: <span>{{ search }}</span>
+    </h1>
+    <div class="dashboard-container__cards-items">
+      <app-card
+        *ngFor="let result of resultsTest"
+        [card]="result"
+        [isDashboard]="true"
+      ></app-card>
+    </div>
+  </div>
+</div>

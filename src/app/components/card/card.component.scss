@@ -25,4 +25,36 @@
       margin-right: 5px;
     }
   }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 0.8px solid rgba(190, 190, 190, 0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &.edit {
+      &:hover {
+        background-color: rgba(26, 148, 255, 0.808);
+        color: white;
+      }
+    }
+
+    &.delete {
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.821);
+        color: white;
+      }
+    }
+  }
 }
