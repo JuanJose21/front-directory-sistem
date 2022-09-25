@@ -1,7 +1,15 @@
 <div class="search-container">
   <div class="search-container__field">
-    <input type="text" placeholder="¿Qué quieres encontrar?" />
-    <button class="search-container__search">
+    <input
+      type="text"
+      placeholder="¿Qué quieres encontrar?"
+      [(ngModel)]="search"
+    />
+    <button
+      class="search-container__search"
+      (click)="handleClickSearch()"
+      [disabled]="search.length === 0"
+    >
       <ion-icon name="search-outline"></ion-icon>
     </button>
   </div>

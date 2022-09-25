@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const ran = Math.round((Math.random() * 100) % 6);
-    console.log(ran);
     this.backgroundImage = this.images[ran];
   }
 }
