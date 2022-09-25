@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IResults } from 'src/app/interfaces/card.interace';
 
-interface IResults {
-  image: string;
-  name: string;
-  location: string;
-  phone: string;
-  email: string;
-}
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
@@ -17,6 +11,55 @@ export class ResultsComponent implements OnInit {
   search: string = '';
   isViewSkeleton: boolean = true;
   resultsTest: IResults[] = [
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
+    {
+      image: '/assets/images/icon-default.png',
+      name: 'test',
+      email: 'test@test.com',
+      location: 'test 1',
+      phone: '123456789',
+    },
     {
       image: '/assets/images/icon-default.png',
       name: 'test',

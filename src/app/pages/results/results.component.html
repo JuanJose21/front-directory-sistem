@@ -7,17 +7,7 @@
       Resultado para la búsqueda: <span>{{ search }}</span>
     </h1>
     <div class="results-container__cards-items" *ngIf="!isViewSkeleton">
-      <div class="results-container__card" *ngFor="let result of resultsTest">
-        <img [src]="result.image" [alt]="result.name" />
-        <h2>{{ result.name }}</h2>
-        <div>
-          <p>
-            <ion-icon name="location-outline"></ion-icon>{{ result.location }}
-          </p>
-          <p><ion-icon name="call-outline"></ion-icon>{{ result.phone }}</p>
-          <p><ion-icon name="mail-outline"></ion-icon>{{ result.email }}</p>
-        </div>
-      </div>
+      <app-card [card]="result" *ngFor="let result of resultsTest"></app-card>
     </div>
     <div class="results-container__cards-skeleton" *ngIf="isViewSkeleton">
       <ngx-skeleton-loader
