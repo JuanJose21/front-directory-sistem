@@ -6,8 +6,14 @@
     <h1>
       Resultado para la búsqueda: <span>{{ search }}</span>
     </h1>
+    <div class="input-search">
+      <input type="text" [(ngModel)]="search" />
+    </div>
     <div class="results-container__cards-items" *ngIf="!isViewSkeleton">
-      <app-card [card]="result" *ngFor="let result of resultsTest"></app-card>
+      <app-card
+        [card]="result"
+        *ngFor="let result of results | searchPipe: search"
+      ></app-card>
     </div>
     <div class="results-container__cards-skeleton" *ngIf="isViewSkeleton">
       <ngx-skeleton-loader

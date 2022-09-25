@@ -1,3 +1,4 @@
+import { DirectoryService } from './../../services/directory.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IResults } from 'src/app/interfaces/card.interace';
@@ -23,7 +24,15 @@ export class ResultsComponent implements OnInit {
     },
   ];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  get results() {
+    return this.directoryService.resultados;
+  }
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private directoryService: DirectoryService
+  ) {}
 
   ngOnInit() {
     setTimeout(() => {
@@ -31,6 +40,7 @@ export class ResultsComponent implements OnInit {
     }, 3000);
     this.search = this.activatedRoute.snapshot.paramMap.get('search') || '';
     if (this.search === '') this.router.navigate(['/home']);
+    this.directoryService.getAll();
   }
 
   returnHome() {
