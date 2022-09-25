@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IResults } from 'src/app/interfaces/card.interace';
 
 @Component({
   selector: 'app-form-directory',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-directory.component.scss'],
 })
 export class FormDirectoryComponent implements OnInit {
-  @Input() idEdit: number | null = null;
+  @Input() cardEdit: IResults | null = null;
   directoryForm!: FormGroup;
 
   constructor() {}
@@ -23,17 +24,19 @@ export class FormDirectoryComponent implements OnInit {
       email: new FormControl('', [Validators.required]),
     });
 
-    if (this.idEdit) this.loadEdit();
+    if (this.cardEdit) this.loadEdit();
   }
 
   loadEdit() {
-    this.directoryForm.get('image')?.setValue('url image');
-    this.directoryForm.get('name')?.setValue('Test');
-    this.directoryForm.get('nit')?.setValue('123456');
-    this.directoryForm.get('location')?.setValue('Calle 1');
-    this.directoryForm.get('phone')?.setValue('32589');
-    this.directoryForm.get('cellphone')?.setValue('369852');
-    this.directoryForm.get('email')?.setValue('email@gmail.com');
+    this.directoryForm.get('image')?.setValue(this.cardEdit?.imagen || '');
+    this.directoryForm.get('name')?.setValue(this.cardEdit?.nombre || '');
+    this.directoryForm.get('nit')?.setValue(this.cardEdit?.nit || '');
+    this.directoryForm
+      .get('location')
+      ?.setValue(this.cardEdit?.direccion || '');
+    this.directoryForm.get('phone')?.setValue(this.cardEdit?.telefono || '');
+    this.directoryForm.get('cellphone')?.setValue(this.cardEdit?.celular || '');
+    this.directoryForm.get('email')?.setValue(this.cardEdit?.correo || '');
   }
 
   handleForm() {

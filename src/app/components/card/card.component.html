@@ -1,19 +1,20 @@
 <div class="card-container">
-  <img [src]="card.image" [alt]="card.name" />
+  <img [src]="card.imagen" [alt]="card.nombre" (error)="errorHandler($event)" />
 
-  <h2>{{ card.name }}</h2>
+  <h2>{{ card.nombre }}</h2>
   <div>
-    <p><ion-icon name="location-outline"></ion-icon>{{ card.location }}</p>
-    <p><ion-icon name="call-outline"></ion-icon>{{ card.phone }}</p>
-    <p><ion-icon name="mail-outline"></ion-icon>{{ card.email }}</p>
+    <p><ion-icon name="location-outline"></ion-icon>{{ card.direccion }}</p>
+    <p><ion-icon name="call-outline"></ion-icon>{{ card.telefono }}</p>
+    <p><ion-icon name="call-outline"></ion-icon>{{ card.celular }}</p>
+    <p><ion-icon name="mail-outline"></ion-icon>{{ card.correo }}</p>
   </div>
   <div class="card-container__buttons" *ngIf="isDashboard">
-    <button class="card-container__button edit" (click)="handleEdit(card.id)">
+    <button class="card-container__button edit" (click)="handleEdit(card)">
       <ion-icon name="create-outline"></ion-icon>
     </button>
     <button
       class="card-container__button delete"
-      (click)="handleDelete(card.name)"
+      (click)="handleDelete(card.nombre)"
     >
       <ion-icon name="trash-outline"></ion-icon>
     </button>

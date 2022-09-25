@@ -13,11 +13,13 @@ export class ResultsComponent implements OnInit {
   resultsTest: IResults[] = [
     {
       id: 1,
-      image: '/assets/images/icon-default.png',
-      name: 'test',
-      email: 'test@test.com',
-      location: 'test 1',
-      phone: '123456789',
+      imagen: 'url',
+      nombre: 'Testing',
+      nit: 123456789,
+      direccion: 'Calle1',
+      telefono: 123456789,
+      celular: 123456789,
+      correo: 'email@mail.com',
     },
   ];
 

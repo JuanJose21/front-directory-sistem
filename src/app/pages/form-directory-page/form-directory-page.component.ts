@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { IResults } from 'src/app/interfaces/card.interace';
 
 @Component({
   selector: 'app-form-directory-page',
@@ -7,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./form-directory-page.component.scss'],
 })
 export class FormDirectoryPageComponent implements OnInit {
-  idEdit!: number;
+  cardEdit!: IResults;
   images: string[] = [
     '/assets/images/img-1.jpeg',
     '/assets/images/img-2.jpeg',
@@ -19,13 +20,14 @@ export class FormDirectoryPageComponent implements OnInit {
   ];
   backgroundImage: string = '/assets/images/img-1.jpeg';
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private router: Router) {
+    this.cardEdit = this.router.getCurrentNavigation()?.extras?.state?.['card'];
+  }
 
   ngOnInit() {
     const ran = Math.round((Math.random() * 100) % 6);
     this.backgroundImage = this.images[ran];
 
-    this.idEdit = Number(this.activatedRoute.snapshot.paramMap.get('id')) || 0;
-    if (isNaN(this.idEdit)) this.router.navigate(['/dashboard']);
+    if (!this.cardEdit) this.router.navigate(['/create']);
   }
 }

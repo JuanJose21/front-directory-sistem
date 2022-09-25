@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'results/:search', component: ResultsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'edit/:id', component: FormDirectoryPageComponent },
+  { path: 'edit', component: FormDirectoryPageComponent },
   { path: 'create', component: FormDirectoryPageComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

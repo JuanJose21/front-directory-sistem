@@ -1,8 +1,10 @@
 export interface IResults {
   id: number;
-  image: string;
-  name: string;
-  location: string;
-  phone: string;
-  email: string;
+  imagen: string;
+  nombre: string;
+  nit: number;
+  direccion: string;
+  telefono: number;
+  celular: number;
+  correo: string;
 }

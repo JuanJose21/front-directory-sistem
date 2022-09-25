@@ -11,18 +11,20 @@ declare let alertify: any;
 export class CardComponent {
   @Input() card: IResults = {
     id: 1,
-    image: '/assets/images/icon-default.png',
-    name: 'test',
-    email: 'test@test.com',
-    location: 'test 1',
-    phone: '123456789',
+    imagen: 'url',
+    nombre: 'Testing',
+    nit: 123456789,
+    direccion: 'Calle1',
+    telefono: 123456789,
+    celular: 123456789,
+    correo: 'email@mail.com',
   };
   @Input() isDashboard: boolean = false;
 
   constructor(private router: Router) {}
 
-  handleEdit(id: number) {
-    this.router.navigate(['/edit', id]);
+  handleEdit(card: IResults) {
+    this.router.navigate(['edit'], { state: { card } });
   }
 
   handleDelete(name: string) {
@@ -36,5 +38,9 @@ export class CardComponent {
         () => {}
       )
       .show();
+  }
+
+  errorHandler(event: any): void {
+    event.target.src = '/assets/images/icon-default.png';
   }
 }
