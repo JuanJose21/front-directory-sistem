@@ -1,0 +1,118 @@
+$font-size: 1rem;
+$font-family: "Roboto", sans-serif;
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background: rgb(203, 203, 203);
+  color: rgb(68, 68, 68);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+audio,
+canvas,
+figcaption,
+figure,
+figure img,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+video {
+  display: block;
+}
+
+picture {
+  display: block;
+  position: relative;
+}
+
+picture,
+img {
+  line-height: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+}
+
+:focus {
+  outline: 1px dashed #097ab2;
+  outline-offset: 1px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border: 0;
+  &:focus-visible {
+    border: 0;
+    outline: none;
+  }
+}

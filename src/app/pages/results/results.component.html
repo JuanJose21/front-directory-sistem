@@ -1,15 +1,22 @@
 <div class="results-container">
   <div class="results-container__cards">
-    <h1>Resultado para la búsqueda: {{ search }}</h1>
+    <button class="results-container__back" (click)="returnHome()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </button>
+    <h1>
+      Resultado para la búsqueda: <span>{{ search }}</span>
+    </h1>
     <div class="results-container__cards-items" *ngIf="!isViewSkeleton">
       <div class="results-container__card" *ngFor="let result of resultsTest">
         <img [src]="result.image" [alt]="result.name" />
         <h2>{{ result.name }}</h2>
-        <p>
-          <ion-icon name="location-outline"></ion-icon>{{ result.location }}
-        </p>
-        <p><ion-icon name="call-outline"></ion-icon>{{ result.phone }}</p>
-        <p><ion-icon name="mail-outline"></ion-icon>{{ result.email }}</p>
+        <div>
+          <p>
+            <ion-icon name="location-outline"></ion-icon>{{ result.location }}
+          </p>
+          <p><ion-icon name="call-outline"></ion-icon>{{ result.phone }}</p>
+          <p><ion-icon name="mail-outline"></ion-icon>{{ result.email }}</p>
+        </div>
       </div>
     </div>
     <div class="results-container__cards-skeleton" *ngIf="isViewSkeleton">
@@ -19,6 +26,7 @@
         animation="progress"
         [theme]="{
           'border-radius': '5px',
+          'justify-content': 'center',
           height: '300px',
           width: '200px',
           margin: '15px'
