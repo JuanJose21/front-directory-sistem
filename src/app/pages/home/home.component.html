@@ -3,6 +3,9 @@
   [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
 >
   <div class="home-container__search">
+    <button class="home-container__login" (click)="redirectLogin()">
+      <ion-icon name="person-sharp"></ion-icon>
+    </button>
     <app-search></app-search>
   </div>
 </div>

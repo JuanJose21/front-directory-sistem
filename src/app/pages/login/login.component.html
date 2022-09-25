@@ -1,0 +1,20 @@
+<div
+  class="login-container"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+>
+  <div class="login-container__form">
+    <form novalidate [formGroup]="userForm" *ngIf="userForm">
+      <label>
+        <span>Usuario</span>
+        <input type="text" formControlName="user" />
+      </label>
+      <label>
+        <span>Contraseña</span>
+        <input type="password" formControlName="password" />
+      </label>
+      <button type="submit" (click)="login()" [disabled]="!userForm.valid">
+        Iniciar sesión
+      </button>
+    </form>
+  </div>
+</div>
