@@ -27,6 +27,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {}
 
   logout() {
-    this.router.navigate(['/home']);
+    localStorage.removeItem('login');
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 500);
+  }
+
+  createNew() {
+    this.router.navigate(['/create']);
   }
 }

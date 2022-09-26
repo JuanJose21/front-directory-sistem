@@ -3,9 +3,10 @@
     <button class="dashboard-container__back" (click)="logout()">
       <ion-icon name="log-out-sharp"></ion-icon>
     </button>
-    <h1>
-      Resultado para la búsqueda: <span>{{ search }}</span>
-    </h1>
+    <h1>Directorio</h1>
+    <button class="dashboard-container__create" (click)="createNew()">
+      Crear nuevo
+    </button>
     <div class="dashboard-container__cards-items">
       <app-card
         *ngFor="let result of resultsTest"

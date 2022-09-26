@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+declare let alertify: any;
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
   backgroundImage: string = '/assets/images/img-1.jpeg';
   userForm!: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authServices: AuthService) {}
 
   ngOnInit() {
     const ran = Math.round((Math.random() * 100) % 6);
@@ -33,6 +35,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.router.navigate(['/dashboard']);
+    // this.authServices
+    //   .login(this.userForm.value.user, this.userForm.value.password)
+    //   .subscribe({
+    //     next: (response) => {
+    //       localStorage.setItem('login', 'true');
+    // setTimeout(() => {
+    //   this.router.navigate(['/dashboard']);
+    // }, 500);
+    //     },
+    //     error: (error) => {
+    //       alertify.error('Ocurrió un error, inténtelo más tarde');
+    //     },
+    //   });
+    localStorage.setItem('login', 'true');
+    setTimeout(() => {
+      this.router.navigate(['/dashboard']);
+    }, 500);
   }
 }
