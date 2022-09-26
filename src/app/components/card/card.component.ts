@@ -49,7 +49,6 @@ export class CardComponent {
           } catch {
             alertify.error('Ocurrió un error, inténtelo más tarde');
           }
-          alertify.success('Registro eliminado correctamente');
         },
         () => {}
       )

@@ -35,22 +35,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.authServices
-    //   .login(this.userForm.value.user, this.userForm.value.password)
-    //   .subscribe({
-    //     next: (response) => {
-    //       localStorage.setItem('login', 'true');
-    // setTimeout(() => {
-    //   this.router.navigate(['/dashboard']);
-    // }, 500);
-    //     },
-    //     error: (error) => {
-    //       alertify.error('Ocurrió un error, inténtelo más tarde');
-    //     },
-    //   });
-    localStorage.setItem('login', 'true');
-    setTimeout(() => {
-      this.router.navigate(['/dashboard']);
-    }, 500);
+    this.authServices
+      .login(this.userForm.value.user, this.userForm.value.password)
+      .subscribe({
+        next: (response) => {
+          localStorage.setItem('login', 'true');
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+          }, 500);
+        },
+        error: (error) => {
+          alertify.error('Ocurrió un error, inténtelo más tarde');
+        },
+      });
   }
 }
